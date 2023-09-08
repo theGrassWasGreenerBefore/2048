@@ -1,22 +1,28 @@
 <template>
   <div id="main_app">
-    <h1>This is {{ templateNumber }}</h1>
     <Game />
   </div>
 </template>
 
 <script>
-import Game from './components/Game.vue'
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
+import Game from '@/components/Game.vue'
 
 export default {
   name: 'App',
+
   components: {
     Game
   },
-  data() {
-    return {
-      templateNumber: 2048
-    }
+  setup() {
+    const store = useStore()
+
+    onMounted(() => {
+      store.commit('addCell', { id: '3e432e', x: 2, y: 2, value: 56 })
+    })
+
+    return {}
   }
 }
 </script>

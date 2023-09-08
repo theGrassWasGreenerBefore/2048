@@ -5,14 +5,17 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
 import Cell from '@/components/Cell.vue'
+
 export default {
   components: {
     Cell
   },
   data() {
+    const store = useStore()
     return {
-      cells: [{ id: 'e3432e', x: 1, y: 1, value: 35 }, { id: '3e432e', x: 2, y: 2, value: 56 }]
+      cells: store.state.cells
     }
   }
 }
