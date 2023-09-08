@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import { computed, onMounted } from 'vue'
-import { useStore } from 'vuex'
-import Game from '@/components/Game.vue'
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import Game from '@/components/Game.vue';
 
 export default {
   name: 'App',
@@ -16,15 +16,15 @@ export default {
     Game
   },
   setup() {
-    const store = useStore()
+    const store = useStore();
 
     onMounted(() => {
-      store.commit('addCell', { id: '3e432e', x: 2, y: 2, value: 56 })
-    })
+      store.commit('addCell', { id: '3e432e', x: 2, y: 2, value: 56 });
+    });
 
-    return {}
+    return {};
   }
-}
+};
 </script>
 
 <style>

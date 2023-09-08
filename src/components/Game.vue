@@ -5,20 +5,20 @@
 </template>
 
 <script>
-import { useStore } from 'vuex'
-import Cell from '@/components/Cell.vue'
+import { useStore } from 'vuex';
+import Cell from '@/components/Cell.vue';
 
 export default {
   components: {
     Cell
   },
   data() {
-    const store = useStore()
+    const store = useStore();
     return {
       cells: store.state.cells
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
